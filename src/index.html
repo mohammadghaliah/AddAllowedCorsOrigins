@@ -1,0 +1,38 @@
+<html>
+  AddAllowedCorsOrigins
+</html>
+
+<!-- startup ==>.net -->
+
+<!-- -configure
+app.UseCors("PolicyCourse"); -->
+
+<!-- Configerserveces:
+
+    services.AddScoped<IDBContext,DBContext>();
+            services.AddScoped<IInfoService, InfoService>();
+            services.AddScoped<IIfnoRepository, InfoReposiyory>();
+
+services.AddCors(options =>
+            {
+                options.AddPolicy("PolicyCourse", builder => builder.WithOrigins("http://localhost:4200")
+                .SetIsOriginAllowed((host) => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+            }); -->
+
+<!-- ------------------------------------------
+            services.AddCors(options =>
+            {
+                if (string.IsNullOrEmpty(origins.AllowedOrigins))
+                {
+                    options.AddPolicy("AllowAll", builder => builder.
+                    SetIsOriginAllowed(_ => true).AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+                }
+                else
+                {
+                    options.AddPolicy("AllowAll", builder => builder.WithOrigins("http://localhost:4200,http://localhost:4201")
+                    .AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+                }
+            }); -->
